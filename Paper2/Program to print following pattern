@@ -1,0 +1,44 @@
+#include<iostream>
+#include<cstdio>
+
+using namespace std;
+
+int main()
+{
+	int i,j,k=1,n,s;
+	cout<<"Enter the number ";
+	cin>>n;
+	s=(n*2)-2;
+	//printing the left half
+	for(i=1; i<2*n; i++)
+	{
+		int m=1;
+		for(j=1;j<=k;j++)
+		{
+			cout<<"*";
+		}
+		while(m<=s)
+		{
+			cout<<" ";
+			m++;
+		}
+		for(j=1;j<=k;j++)
+		{
+			cout<<"*";
+		}
+		cout<<"\n";
+				
+	
+		if(i<n)
+		{
+			k++;
+			s-=2;
+		}
+		else
+		{
+			k--;
+			s+=2;
+		}
+	}
+	return 0;
+}
