@@ -1,0 +1,34 @@
+#include<iostream>
+#include<cstdio>
+
+using namespace std;
+
+int main()
+{
+	int arr1[100];
+	int small, secondsmall,i,n,j;
+	cout<<"Enter the number of elements ";
+	cin >>n;
+	cout<<"\nEnter the elements ";
+	for (j=0;j<n;j++)
+	{
+		cin>>arr1[j];
+	}
+	small= arr1[0];
+	secondsmall=arr1[0];
+	for (i=0; i<n; i++)
+	{
+		if (arr1[i]<small)
+		{
+			secondsmall = small;
+			small = arr1[i];
+		}
+		else if (arr1[i] < secondsmall && arr1[i]!=small)
+		{
+			secondsmall = arr1[i];
+		}
+	}
+	cout<<"Smallest element is " << small<<"\n";
+	cout<<"Second smallest element is " << secondsmall;
+	return 0;
+}
