@@ -1,0 +1,52 @@
+#include<iostream>
+#include<cstdio>
+#include<algorithm>
+
+using namespace std;
+
+int main()
+{
+	int arr[100];
+	int n,i,l,r,sum,p1,p2,min_sum;
+	cout<<"Enter the number of elements of array ";
+	cin>>n;
+	cout <<"\nEnter the elements of array ";
+	for(i=0;i<n;i++)
+	{
+		cin>>arr[i];
+	}
+	sort(arr, arr+n);
+	l = 0;
+	r = n-1;
+	p1=arr[l];
+	p2=arr[r];
+
+	min_sum = abs(arr[l] + arr[r]);
+	while(l<r)
+	{
+		sum = (arr[l] + arr[r]);
+		if(sum>0)
+		{
+			if(abs(sum)<min_sum)
+			{
+				p1=arr[l];
+				p2=arr[r];
+			}
+			r--;
+			
+		}
+		else if(sum<0)
+		{
+			if(abs(sum)<min_sum)
+			{
+				p1=arr[l];
+				p2=arr[r];
+			}
+			l++;
+		}
+	}
+	cout<<"\nThe two elements whose sum is minimum are ";
+	cout<<"\n"<<p1<<" "<<p2;
+	
+	return 0;
+}
