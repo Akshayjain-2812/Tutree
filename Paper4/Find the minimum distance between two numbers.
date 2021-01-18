@@ -1,0 +1,35 @@
+#include<iostream>
+#include<cstdio>
+#include<cmath>
+
+using namespace std;
+
+int main()
+{
+	int arr[100],i,j,n,dist,m1,m2;
+	cout<<"Enter the number of elements ";
+	cin>>n;
+	dist = n+1;
+	cout<<"\nEnter the elements ";
+	for(i=0;i<n;i++)
+	{
+		cin>>arr[i];
+	}
+	cout<<"\nEnter the first element ";
+	cin>>m1;
+	cout<<"\nEnter the second element ";
+	cin>>m2;
+	cout<<"\n The minimum distance is ";
+	for(i=0;i<n;i++)
+	{
+		for(j=i+1;j<n;j++)
+		{
+			if(arr[i]==m1 && arr[j]==m2 ||arr[i]==m2 && arr[j]==m1 && dist>abs(i-j) )
+			{
+				dist=abs(i-j);
+			}
+		}
+	}
+	cout<<dist;
+	return 0;
+}
