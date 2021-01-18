@@ -1,0 +1,39 @@
+#include<iostream>
+#include<cstdio>
+#include<algorithm>
+
+using namespace std;
+
+int main()
+{
+	double arr[100];
+	int i,n,j,k, median;
+	cout<<"Enter the no. of elements of array ";
+	cin>>j;
+	n = 0;
+	for(i=0; i<j; i++)
+	{
+		cout<<"\nEnter the element of array ";
+		cin>>arr[i];
+		n +=1;
+		sort(arr,arr + n);
+		cout << "The elements are ";
+		for(k=0; k<n; k++)
+		{
+			cout<<arr[k] << " ";
+		}
+		if (n%2 != 0)
+		{
+			median = arr[n/2];
+		}
+		else
+		{
+			median = (arr[n/2] + arr[(n - 1)/2])/2;
+		}
+		cout<<"\nThe median is " << median;
+	
+	}
+	
+	
+	return 0;
+}
